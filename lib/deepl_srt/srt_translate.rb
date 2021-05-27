@@ -11,7 +11,7 @@ class SrtTranslate
     @target_lang = target_lang
   end
 
-  def parse(_text)
+  def parse
     @new_content = ''
     @file.lines.each do |line|
       @new_content << line.sequence
