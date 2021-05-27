@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'version'
+require_relative './deepl_srt/version'
 require_relative './deepl_srt/srt_translate'
 
 # Main module of DeeplSrt

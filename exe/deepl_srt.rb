@@ -6,7 +6,7 @@ require 'deepl_srt'
 input_params = ARGV
 
 if input_params.empty?
-  puts 'deepl_srt [input path] [target_lang] [result_path]\n'
+  puts 'deepl_srt [input path] [target_lang] [result_path]'
 else
   path = input_params[0]
   target_lang = input_params[1]
