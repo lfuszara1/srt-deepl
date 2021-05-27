@@ -14,18 +14,25 @@ class SrtTranslate
 
   def parse
     @new_content = ''
-    @file.lines.each do |line|
-      @new_content << line.sequence.to_i
-      @new_content << line.time_str
-      line.text.each do |txt|
-        json = translate(txt)
-        @new_content << JSON.parse(json)['translations'][0]['text']
-      end
+    @file.lines.each_with_index do |line, index|
+      @new_content << parse_part(line, index)
     end
     @new_content
   end
 
   private
+
+  def parse_part(line, index)
+    str = ''
+    str << "#{index}\n"
+    str << "#{line.time_str}\n"
+    line.text.each do |txt|
+      json = translate(txt)
+      str << "#{JSON.parse(json)['translations'][0]['text']}\n"
+    end
+    str << "\n"
+    str
+  end
 
   def translate(text)
     @deepl_request.request(text, @target_lang).body
