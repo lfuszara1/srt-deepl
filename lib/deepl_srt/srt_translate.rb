@@ -1,5 +1,6 @@
 # frozen_string_literal: false
 
+require 'json'
 require 'srt'
 require_relative './deepl_request'
 
@@ -14,10 +15,11 @@ class SrtTranslate
   def parse
     @new_content = ''
     @file.lines.each do |line|
-      @new_content << line.sequence
+      @new_content << line.sequence.to_i
       @new_content << line.time_str
       line.text.each do |txt|
-        @new_content << translate(txt)
+        json = translate(txt)
+        @new_content << JSON.parse(json)['translations'][0]['text']
       end
     end
     @new_content

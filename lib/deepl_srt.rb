@@ -7,7 +7,7 @@ require_relative './deepl_srt/srt_translate'
 module DeeplSrt
   class Error < StandardError; end
 
-  def deepl_srt(path, target_lang, result_path)
+  def self.deepl_srt(path, target_lang, result_path)
     srt_translate = SrtTranslate.new(path, target_lang)
     result = srt_translate.parse
     File.open(result_path, 'w') { |file| file.write(result) }
