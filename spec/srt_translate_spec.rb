@@ -6,9 +6,9 @@ require_relative '../lib/deepl_srt/srt_translate'
 
 describe SrtTranslate do
   describe 'Translate Subtiltes' do
-    let(:new_instance) { SrtTranslate.new('./examples/example.srt') }
+    let(:new_instance) { SrtTranslate.new('./examples/example.srt', 'PL') }
     it 'translate' do
-      expect(new_instance.translate('', 'PL')).to be_instance_of String
+      expect(new_instance.parse('')).to be_instance_of String
     end
   end
 end
