@@ -6,9 +6,9 @@ require_relative './deepl_request'
 
 # Class to translate subtitles
 class SrtTranslate
-  def initialize(path, target_lang)
+  def initialize(api_key, path, target_lang)
     @file = SRT::File.parse(File.new(path))
-    @deepl_request = DeeplRequest.new
+    @deepl_request = DeeplRequest.new(api_key)
     @target_lang = target_lang
   end
 

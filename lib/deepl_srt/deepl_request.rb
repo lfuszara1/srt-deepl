@@ -6,10 +6,9 @@ require 'net/http'
 
 # Class to send request to DeepL API
 class DeeplRequest
-  def initialize
+  def initialize(api_key)
     @uri = URI('https://api-free.deepl.com/v2/translate')
-    env = Dotenv.load('.env')
-    @api_key = env['API_KEY']
+    @api_key = api_key
   end
 
   def request(text, target_lang)
