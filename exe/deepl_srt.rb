@@ -3,4 +3,14 @@
 
 require 'deepl_srt'
 
-DeeplSrt.deepl_srt(ARGV[0], ARGV[1], ARGV[2])
+input_params = ARGV
+
+if input_params.empty?
+  puts 'deepl_srt [input path] [target_lang] [result_path]\n'
+else
+  path = input_params[0]
+  target_lang = input_params[1]
+  result_path = input_params[2]
+
+  DeeplSrt.deepl_srt(path, target_lang, result_path)
+end
