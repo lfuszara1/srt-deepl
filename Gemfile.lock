@@ -9,6 +9,7 @@ GEM
     ast (2.4.2)
     childprocess (4.0.0)
     diff-lcs (1.4.4)
+    dotenv (2.7.6)
     iniparse (1.5.0)
     minitest (5.14.4)
     overcommit (0.57.0)
@@ -46,6 +47,7 @@ GEM
     rubocop-ast (1.4.1)
       parser (>= 2.7.1.5)
     ruby-progressbar (1.11.0)
+    srt (0.1.5)
     unicode-display_width (2.0.0)
 
 PLATFORMS
@@ -53,11 +55,13 @@ PLATFORMS
 
 DEPENDENCIES
   deepl-srt!
+  dotenv
   minitest (~> 5.0)
   overcommit
   rake (~> 13.0)
   rspec
   rubocop
+  srt
 
 BUNDLED WITH
    2.2.16

@@ -12,3 +12,6 @@ gem 'minitest', '~> 5.0'
 gem 'overcommit'
 gem 'rspec'
 gem 'rubocop'
+
+gem 'dotenv'
+gem 'srt'
