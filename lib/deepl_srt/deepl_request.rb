@@ -12,6 +12,9 @@ class DeeplRequest
   end
 
   def request(text, target_lang)
-    Net::HTTP.post_form(@uri, 'auth_key' => @api_key, 'text' => text, 'target_lang' => target_lang)
+    Net::HTTP.post_form(@uri, 'auth_key' => @api_key,
+                              'text' => text,
+                              'target_lang' => target_lang,
+                              'preserve_formatting' => 1)
   end
 end

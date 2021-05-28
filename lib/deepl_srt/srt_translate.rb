@@ -26,11 +26,8 @@ class SrtTranslate
     str = ''
     str << "#{index}\n"
     str << "#{line.time_str}\n"
-    line.text.each do |txt|
-      json = translate(txt)
-      str << "#{JSON.parse(json)['translations'][0]['text']}\n"
-    end
-    str << "\n"
+    json = translate(line.text.join('\n'))
+    str << "#{JSON.parse(json)['translations'][0]['text']}\n\n"
     str
   end
 
