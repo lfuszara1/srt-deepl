@@ -3,3 +3,4 @@
 0.1.2 split line every 6 words
 0.1.3 fix
 0.1.4 from line argument
+0.1.5 fix recreation of file

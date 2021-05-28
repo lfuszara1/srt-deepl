@@ -11,8 +11,7 @@ class SrtTranslate
     @file = SRT::File.parse(File.new(input_path))
     @deepl_request = DeeplRequest.new(api_key)
     @target_lang = target_lang
-    FileUtils.rm(result_path) if File.exist?(result_path)
-    FileUtils.touch(result_path)
+    FileUtils.touch(result_path) unless File.exist?(result_path)
     @result_path = result_path
   end
 

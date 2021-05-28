@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['lukasz@fuszara.pl']
 
   spec.summary       = 'Subtitles translator with DeepL engine'
-  spec.description   = 'deepl_srt [api_key] [target_lang] [input_path] [result_path] [form_line]'
+  spec.description   = 'deepl_srt [api_key] [target_lang] [input_path] [result_path] [from_line]'
   spec.homepage      = 'https://github.com/lfuszara1/srt-deepl'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.4.0')
