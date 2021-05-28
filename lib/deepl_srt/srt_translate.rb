@@ -27,11 +27,16 @@ class SrtTranslate
     str << "#{index}\n"
     str << "#{line.time_str}\n"
     json = translate(line.text.join('\n'))
-    str << "#{JSON.parse(json)['translations'][0]['text']}\n\n"
+    result = shorter(JSON.parse(json)['translations'][0]['text'])
+    str << "#{result}\n\n"
     str
   end
 
   def translate(text)
     @deepl_request.request(text, @target_lang).body
+  end
+
+  def shorter(line)
+    line.split.each_slice(6).map { |a| a.join ' ' }
   end
 end
