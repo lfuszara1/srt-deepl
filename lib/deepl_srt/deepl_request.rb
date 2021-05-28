@@ -11,7 +11,7 @@ class DeeplRequest
     @api_key = api_key
   end
 
-  def request(text, target_lang)
+  def request(target_lang, text)
     Net::HTTP.post_form(@uri, 'auth_key' => @api_key,
                               'text' => text,
                               'target_lang' => target_lang,

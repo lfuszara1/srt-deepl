@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'deepl_srt'
+
+input_params = ARGV
+
+if input_params.empty?
+  puts 'deepl_srt [api_key] [target_lang] [input_path] [result_path] [form_line]'
+else
+  api_key = input_params[0]
+  target_lang = input_params[1]
+  input_path = input_params[2]
+  result_path = input_params[3]
+  if input_params[4].nil?
+    from_line = 0
+  else
+    from_line = input_params[4]
+  end
+
+  DeeplSrt.deepl_srt(api_key, target_lang, input_path, result_path, from_line)
+end
