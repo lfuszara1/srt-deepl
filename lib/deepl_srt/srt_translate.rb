@@ -37,6 +37,7 @@ class SrtTranslate
   end
 
   def shorter(line)
-    line.split.each_slice(6).map { |a| a.join ' ' }
+    short = line.split.each_slice(6).map { |a| a.join ' ' }
+    short.join("\n")
   end
 end
